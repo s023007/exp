@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Thank You!</title>
+
+  <!-- Google Font  -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* ====== Global Style ====== */
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Poppins',sans-serif;
+      min-height:100vh;
+      display:flex;align-items:center;justify-content:center;
+      text-align:center;
+      /* Gradient background */
+      background:linear-gradient(135deg,#ffecd2 0%,#fcb69f 50%,#d691ff 100%);
+      color:#333;
+      padding:20px;
+    }
+
+    /* ====== Card ====== */
+    .card{
+      background:#ffffffee;      /* slight transparency */
+      backdrop-filter:blur(6px); /* glass effect */
+      padding:40px 28px;
+      border-radius:14px;
+      max-width:400px;
+      width:100%;
+      box-shadow:0 10px 25px rgba(0,0,0,.15);
+      animation:fadeIn .9s ease;
+    }
+    @keyframes fadeIn{
+      from{opacity:0;transform:translateY(20px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+
+    h1{
+      font-size:30px;
+      color:#28a745;
+      margin-bottom:12px;
+      font-weight:600;
+    }
+    p{
+      font-size:17px;
+      line-height:1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>🎉 Thank you!</h1>
+    <p>Your email has been received successfully.<br>
+       You’ll be redirected to your offer in just a moment…</p>
+  </div>
+
+  <!-- Redirect after 3 seconds -->
+  <script>
+    setTimeout(()=>{
+      window.location.href='https://singingsfiles.com/show.php?1=0&u=178843&id=68652';
+    }, 3000);
+  </script>
+</body>
+</html>
