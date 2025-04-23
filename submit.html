@@ -4,38 +4,24 @@
   <meta charset="UTF-8">
   <title>Submit Your Email</title>
   <style>
-    body { font-family: Arial; padding: 30px; background: #f7f7f7; }
-    .box { background: white; padding: 20px; max-width: 400px; margin: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-    input, button { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: 1px solid #ccc; }
-    button { background: #e48c00; color: white; font-weight: bold; border: none; }
-    button:hover { background: #cc7a00; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      padding: 30px;
+      display: flex;
+      justify-content: center;
+    }
+    iframe {
+      width: 100%;
+      max-width: 500px;
+      height: 600px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h2>Enter your email to claim</h2>
-    <form id="leadForm">
-      <input type="email" name="user_email" placeholder="Enter your email" required>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>
-    emailjs.init("UWtEugL5TIC6RfnFv"); // استخدم الـ Public Key الخاص بك
-
-    document.getElementById("leadForm").addEventListener("submit", function(e){
-      e.preventDefault();
-      emailjs.sendForm("service_htt7fgh", "template_9exxth7", this)
-        .then(() => {
-          alert("تم الإرسال بنجاح!");
-          window.location.href = "thankyou.html"; // يمكنك تعديل الرابط
-        })
-        .catch(err => {
-          alert("حدث خطأ، حاول مرة أخرى");
-          console.error(err);
-        });
-    });
-  </script>
+  <iframe src="https://tally.so/r/meyrLq" loading="lazy"></iframe>
 </body>
 </html>
