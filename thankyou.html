@@ -1,46 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Thank You</title>
-  <style>
-    body {
-      background-color: #eef5f8;
-      font-family: 'Arial', sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      text-align: center;
-    }
-    .message {
-      background: white;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
-    }
-    h1 {
-      color: #28a745;
-      margin-bottom: 20px;
-    }
-    p {
-      font-size: 16px;
-      color: #333;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Thank You</title>
+<style>
+body{
+  margin:0;font-family:Poppins,Arial,sans-serif;background:#eef5f8;
+  display:flex;justify-content:center;align-items:center;height:100vh;text-align:center
+}
+.box{
+  background:#fff;padding:40px 30px;border-radius:12px;
+  box-shadow:0 6px 20px rgb(0 0 0/10%)
+}
+h1{color:#28a745;margin-bottom:16px}
+</style>
 </head>
 <body>
-  <div class="message">
+  <div class="box">
     <h1>Thank you!</h1>
-    <p>You will be redirected shortly to claim your Amazon Gift Card...</p>
+    <p>Redirecting to your offer…</p>
   </div>
 
-  <script>
-    setTimeout(function() {
-      window.location.href = "https://singingfiles.com/show.php?l=0&u=178843&id=68652";
-    }, 3000);
-  </script>
+<script>
+setTimeout(()=>location.replace(
+  'https://singingfiles.com/show.php?l=0&u=178843&id=68652'
+),3000);
+</script>
 </body>
 </html>
