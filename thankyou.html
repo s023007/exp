@@ -3,42 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Just One More Step!</title>
+  <title>Thank You</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #fff8f0;
-      color: #333;
+      background-color: #f2f7f6;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
       text-align: center;
-      padding: 50px 20px;
+    }
+    .message {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
     }
     h1 {
-      color: #d2691e;
+      color: #28a745;
+      margin-bottom: 20px;
     }
     p {
-      font-size: 18px;
-      margin-top: 20px;
-    }
-    a.button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 28px;
-      background-color: #cc5500;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-    }
-    a.button:hover {
-      background-color: #aa4400;
+      font-size: 16px;
+      color: #333;
     }
   </style>
 </head>
 <body>
+  <div class="message">
+    <h1>Thank you!</h1>
+    <p>You will be redirected shortly to claim your free Dunkin Donuts samples...</p>
+  </div>
 
-  <h1>You're Almost There!</h1>
-  <p>Click the button below to access your Dunkin' Donuts & Coffee Reward:</p>
-  <a class="button" href="https://doctoredits.com/show.php?l=0&u=178843&id=67270" target="_blank">Get My Reward</a>
-
+  <script>
+    setTimeout(function() {
+      window.location.href = "https://doctoredits.com/show.php?l=0&u=178843&id=68652";
+    }, 3000);
+  </script>
 </body>
 </html>
